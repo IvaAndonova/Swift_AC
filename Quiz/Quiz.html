@@ -1,0 +1,35 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Quiz 1</title>
+    </head>
+    <body>
+        <header>
+            <h1>Short space quiz</h1>
+            <p>After you select your answer, click.......</p>
+            <h2>By watching the video, can you guess what is the size of the space station?</h2>
+        </header>
+        <main>
+            <video preload="metadata" controls poster="iss.jpg" width="600">
+                <source src="iss animation.mp4" type="video/mp4">
+            </video>
+            <br>
+            <div>
+                A<input type="radio" name="sizeStation" value="350mX232m"/>350mX232m
+                <br>
+                B<input type="radio" name="sizeStation" value="60mX24m"/>60mX24m
+                <br>
+                C<input type="radio" name="sizeStation" value="109mX73m"/>109mX73m
+                <br>
+                D<input type="radio" name="sizeStation" value="206mX176m"/>206mX176m
+            </div>
+            <br>
+            <div>
+                <form name="myForm" method="GET" action="Quiz2.html">
+                    <button type="submit">Next question ></button>
+                </form>
+            </div>
+        </main>
+    </body>
+</html>
