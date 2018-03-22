@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Contact us</title>
+    <style>
+            fieldset {
+                width: 0px;
+            }
+        </style>
+</head>
+
+<body>
+        <div>
+                <h2>Get in touch with us</h2>
+            </div>
+    <header>
+        <img width="100%" src="contactBanner.jpg" alt="Banner Contact us"/>
+    </header>
+    <main>
+        <form name="myForm" method="GET">
+            <fieldset>
+                <legend>
+                    <h3>Personal details</h3>
+                </legend>
+                <label for="nameInput">
+                    <b>Name:</b>
+                </label>
+                <input type="text" name="nameInput" size="42">
+                </br>
+                <br>
+                <label for="emailInput">
+                    <b>Email:</b>
+                </label>
+                <input type="text" name="emailInput" placeholder="you@example.com" required="true" size="42">
+                <br>
+                <br>
+                <label for="telInput">
+                    <b>Telephone Number:</b>
+                </label>
+                <input type="tel" name="telInput" placeholder="+359-999-88-77-55" required="true" size="42">
+                <br>
+                <br>
+                <label for="address">
+                    <b>Address:</b>
+                </label>
+                <input type="text" name="address" id="address" size="42" />
+                <br>
+                <br>
+                <label for="dateInput">
+                    <b>Date of birth:</b>
+                </label>
+                <input type="date" name="dateInput">
+                <br>
+                <br>
+                <label for="genderInput">
+                    <b>Gender:</b>
+                </label>
+                Male
+                <input type="radio" name="genderInput" value="Male"> Female
+                <input type="radio" name="genderInput" value="Female">
+                <br>
+                <br>
+                <label for="countryInput">
+                    <b>Country:</b>
+                </label>
+                <select name="countryInput">
+                    <option value="country1">Bulgaria</option>
+                    <option value="country2">Greece</option>
+                    <option value="country3">Italy</option>
+                    <option value="country3">Belgium</option>
+                    <option value="country4">Germany</option>
+                    <option value="country4">Austria</option>
+                </select>
+                <br>
+                <br>
+                    <label for="answerPlanet"><b>For which planet you most liked the page?</b></label>
+                    <select multiple="multiple" name="answerPlanet">
+                        <option value="answ1">Mercury</option>
+                        <option value="answ2">Mars</option>
+                        <option value="answ3">Earth</option>
+                        <option value="answ4">Jupiter</option>
+                        <option value="answ5">Neptune</option>
+                    </select>
+                    <br>
+            </fieldset>
+     <p>
+                <textarea name="text" cols="52" rows="10">Your question...</textarea>
+            </p>
+            <div>
+                    <input type="submit" value="Submit details">
+            </div>
+            <br>
+        </form>
+    </main>
+    <hr>
+    <footer>
+        <p>Posted by: Space/Solar system</p>
+<p><b>Contact details:</b>
+            <a href="mailto:someone@example.com">someone@example.com</a>
+           &nbsp;&nbsp; Telephone: +359/987456 </p>
+    </footer>
+</body>
+
+</html>
