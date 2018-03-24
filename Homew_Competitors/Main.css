@@ -1,0 +1,28 @@
+    body {
+    background-color: #34495e;
+    width: 100%;
+}
+    #competitorS {
+    color: white;
+    text-align: left;
+    font-size: 20px;
+    
+}
+    .cardBussines {
+    background-color: #e74c3c;
+}
+    #mainTable {
+    width: 100%;
+}
+    .firstName {
+    color: white;
+}
+    .secondAtr {
+    color: white;
+}
+    .properAtr {
+    color:rgb(251, 255, 0);
+}
+    img {
+    width: 100px;
+}
