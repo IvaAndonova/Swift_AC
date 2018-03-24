@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Contact us</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="Styles/Formstyle.css" />
+    <style>
+        fieldset {
+            width: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div >
+        <h2 class="topHead">Get in touch with us</h2>
+    </div>
+    <header class="container">
+        <img class="headPArt" src="Images/contactBanner.jpg" alt="Banner Contact us" />
+    </header>
+    <main>
+        <form  name="myForm" method="GET">
+            <fieldset class="contactForm">
+                <legend class="headForm">
+                    <h3>Personal details</h3>
+                </legend>
+                <label for="nameInput">
+                    <b>Name:</b>
+                </label>
+                <input type="text" name="nameInput">
+                <br>
+                <label for="emailInput">
+                        <b>Email:</b>
+                    </label>
+                    <input type="text" name="emailInput" placeholder="you@example.com" required="true" size="42">
+                    <br>
+                    <label for="telInput">
+                            <b>Telephone Number:</b>
+                        </label>
+                        <input type="tel" name="telInput" placeholder="+359-999-88-77-55" required="true" size="42">
+                        <br>
+                <label for="address">
+                    <b>Address:</b>
+                </label>
+                <input type="text" name="address" id="address" size="42" />
+                <br>
+                <label for="dateInput">
+                    <b>Date of birth:</b>
+                </label>
+                <input type="date" name="dateInput">
+                <br>
+                <label for="genderInput">
+                    <b>Gender:</b>
+                </label>
+                Male
+                <input type="radio" name="genderInput" value="Male"> Female
+                <input type="radio" name="genderInput" value="Female">
+                <br>
+                <label for="countryInput">
+                    <b>Country:</b>
+                </label>
+                <select name="countryInput">
+                    <option value="country1">Bulgaria</option>
+                    <option value="country2">Greece</option>
+                    <option value="country3">Italy</option>
+                    <option value="country3">Belgium</option>
+                    <option value="country4">Germany</option>
+                    <option value="country4">Austria</option>
+                </select>
+    
+    </br></br>
+                <input type="submit" value="Submit">
+            </fieldset>
+
+        </form>
+    </main>
+</br></br>
+    <hr>
+    <footer>
+            <p>Posted by: Space/Solar system</p>
+    <p><b>Contact details:</b>
+                <a href="mailto:someone@example.com">someone@example.com</a>
+               &nbsp;&nbsp; </br>
+               Telephone: +359/987456 </p>
+        </footer>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+body {
+    background-color: gainsboro;
+}
+.topHead {
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Segoe UI';
+    text-shadow: 5px 5px 10px rgb(66, 66, 66);
+}
+input[type=text], select {
+    width: 100%;
+    padding: 15px, 20px;
+    margin: 8px, 0;
+    display: inline-block;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.contactForm {
+    background-color: rgba(224, 221, 221, 0.39);
+}
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px, 20px;
+    margin: 8px, 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    line-height: 30px;
+}
+.headPArt {
+    width: 70%;
+    float: right;
+    margin-top: 2.4%;
+
+}

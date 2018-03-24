@@ -1,0 +1,49 @@
+html{
+    margin-top: 5%;
+}
+body {
+    background-color: gainsboro;
+}
+.navSection {
+    background-color: steelblue;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding-left: 5%;
+    height: 70px;;
+}
+.navList {
+    text-align: center;
+    margin-bottom: 10px;
+}
+nav li {
+    display: inline;
+    text-align: center;
+}
+
+.image {
+    position: absolute;
+}
+nav a{
+    color: #fff;
+    text-decoration: none;
+    padding: 0 50px 0;
+    line-height: 20px;
+    text-align: center; 
+    font-size: 20px;
+}
+.gallery {
+
+    margin: 20px;
+    border: 1px solid #ccc;
+  float: left;
+
+}
+.gallery:hover {
+    border: solid black 1px;
+}
+.gallery img {
+    width: 250px;
+    height: 150px;
+}
