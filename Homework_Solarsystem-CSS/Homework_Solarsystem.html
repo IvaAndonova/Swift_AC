@@ -27,9 +27,9 @@
 
     <main>
         <div class="mainContent">
-            <span class="breadrumb">
+            <div class="breadrumb"> <!-- В Solarsystem.css съм обяснил защо е div a не span -->
                 <a href="#">Planets</a>
-            </span>
+            </div>
             <div class="innerContent">
                 <div class="textSection">
                     <article>
@@ -89,6 +89,8 @@
                 </ol>
             </div>
         </div>
+        <!-- Не че мястото, което си дефинирала <map> има значение за работата на самия таг, но е добра идея да поставяш изображението и <map> тага да са близко един до друг.
+            Основната причина е, ч става по-лесен за четене кода. Както си ги направила, човек не знае изобщо, че има imagemap без да види крайа на кода. -->
         <map name="image-map">
             <area alt="Mercury" title="Mercury" href="Mercury.html" coords="55,105,67,150" shape="rect">
             <area alt="Earth" title="Earth" href="Earth.html" coords="85,106,99,169" shape="rect">
