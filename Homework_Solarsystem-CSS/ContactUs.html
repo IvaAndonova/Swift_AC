@@ -16,6 +16,7 @@
     <div >
         <h2 class="topHead">Get in touch with us</h2>
     </div>
+    <!-- Аз не бих сложил <header> тук, тъй като това не е заглавна част. По скоро бих го сложил <aside> или просто <div> -->
     <header class="container">
         <img class="headPArt" src="Images/contactBanner.jpg" alt="Banner Contact us" />
     </header>
@@ -50,12 +51,19 @@
                 </label>
                 <input type="date" name="dateInput">
                 <br>
-                <label for="genderInput">
-                    <b>Gender:</b>
+                <label>
+                    <b>Gender:</b> <!-- Хубаво е да не слагаш <b> а да слижиш стил чрез CSS. Всички стилове е хубаво да са на едно място -->
                 </label>
-                Male
-                <input type="radio" name="genderInput" value="Male"> Female
-                <input type="radio" name="genderInput" value="Female">
+
+                <!-- Когато исзползваш for, има няколко неща, които трябва да забележиш:
+                    1. на <input> елемента слагаш id атрибут, със стойност да речем "idItemOne";
+                    2. на <label> слагаш atribut for, със стойност същата като id-то на <input> елемента
+                    3. For се слага на <label> тага, който пряко описва дадения радио бутон или checkbox (ти го беше сложила на общия <label> който е за Gender)  -->
+                <label for="genderMailRadio">Male</label>
+                <input type="radio" name="genderInput" value="Male" id="genderMailRadio"> 
+                <label for="genderFemailRadio">Female</label>
+                <input type="radio" name="genderInput" value="Female" id="genderFemailRadio">
+                
                 <br>
                 <label for="countryInput">
                     <b>Country:</b>

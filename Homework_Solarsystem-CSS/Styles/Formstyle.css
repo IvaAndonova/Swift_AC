@@ -9,8 +9,8 @@ body {
 }
 input[type=text], select {
     width: 100%;
-    padding: 15px, 20px;
-    margin: 8px, 0;
+    padding: 15px 20px; /* --- Когато слагаш размерите по този начин, не ги разделяй със запетайки. Правилния вариант е да бъдат разделени със интервали. --- */
+    margin: 8px 0;
     display: inline-block;
     border-radius: 4px;
     box-sizing: border-box;
