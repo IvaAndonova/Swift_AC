@@ -1,0 +1,133 @@
+.circles() {
+    background: url(Images/Stars1.png) no-repeat center;
+    border-radius: 10px;
+    position: relative;
+}
+body {
+    background-image: url('background.png');
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+    margin-left: 0px; 
+    margin-right: 0px;
+    padding: 0;
+}
+.mainHead {
+    width: 100%;
+    left: 0;
+    top: 0;
+    display: inline-block;
+}
+.mainNav {
+    width: 100%;
+    display: inline-block;
+    left: 0;
+    top: 0;
+}
+.refreshButton {
+    float: right;  
+}
+.resetButon {
+    width: 55px;
+    height: 45px;
+}
+.loader {
+    text-align: center;
+}
+.progressBar {
+    background: #eee;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+    width: 360px;
+}
+progress::-webkit-progress-value {
+    background: #be37da;
+  }
+  progress::-webkit-progress-bar {
+    background: rgba(192, 192, 192, 0.568);
+  }
+  
+#refreshBut {
+    border-bottom-left-radius: 10px;
+    cursor: pointer;
+}
+.scoreDisplay {
+    background-color: #dad8e2;
+    border-bottom-right-radius: 10px;
+    float: left;
+    padding: 7px;
+}
+.boardSection {
+    width: 1000px;
+    margin: auto;
+    height: 600px;
+    background: rgba(216, 191, 216, 0.596);  
+    border-radius: 20px;
+}
+.boardSection::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.backCard {
+    float: left;
+    padding: 20px;
+    margin-left: 20px;
+}
+.Venus {
+    .circles();
+}
+.circleVenus {
+    background: #d66851;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    margin: auto;
+    position: absolute;
+    top: 30px;
+    left: 10px;
+}
+.earthCircle {
+    position: absolute;
+    top: 30px;
+    left: 10px;
+}
+.Earth {
+    background-image: url('Images/sky.png');
+    border-radius: 10px;
+    position: relative;
+}
+.Mars {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 2px 5px rgba(0, 0, 0, 0.479);
+}
+.circleMars {
+    background: #f67355;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    margin: auto;
+    position: absolute;
+    top: 30px;
+    left: 10px;
+}
+.startButton {
+    width: 400px;
+    height: 40px;
+    background-color: rgba(167, 167, 167, 0.459);
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    font-size: 25px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #2f1b69;
+    border-radius: 20px;
+}
+.linkStart {
+    text-decoration: none;
+}
