@@ -1,0 +1,141 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: gray;
+}
+.mainHead {
+  width: 100%;
+  left: 0;
+  top: 0;
+  display: inline-block;
+}
+.mainNav {
+  width: 100%;
+  display: inline-block;
+  left: 0;
+  top: 0;
+}
+.refreshButton {
+  float: right;
+}
+.resetButon {
+  width: 55px;
+  height: 45px;
+}
+.loader {
+  text-align: center;
+}
+.progress {
+  margin-top: 10px;
+  background: #eee;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  width: 90%;
+}
+#progress {
+  width: 70%;
+  margin: 10px auto;
+  height: 22px;
+  
+}
+
+#progressBar div {
+  height: 100%;
+  text-align: right;
+  padding: 0 10px;
+  line-height: 22px; /* same as #progressBar height if we want text middle aligned */
+  width: 0;
+  background-color: #CBEA00;
+  box-sizing: border-box;
+}
+
+progress::-webkit-progress-value {
+  background: #be37da;
+}
+progress::-webkit-progress-bar {
+  background: rgba(192, 192, 192, 0.568);
+}
+#refreshBut {
+  border-bottom-left-radius: 10px;
+  cursor: pointer;
+}
+.scoreDisplay {
+  background-color: #dad8e2;
+  border-bottom-right-radius: 10px;
+  float: left;
+  padding: 7px;
+}
+.boardSection {
+  width: 1000px;
+  margin: auto;
+  padding-top: 40px;
+  height: 600px;
+  background: rgba(216, 191, 216, 0.596);
+  border-radius: 20px;
+}
+.grid {
+  max-width: 960px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.card {
+  position: relative;
+  -webkit-transition: all .4s linear;
+  -o-transition: all .4s linear;
+  transition: all .4s linear;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  margin: 5px;
+}
+
+.card,
+.back,
+.front {
+  height: 150px;
+  width: 150px;
+}
+
+.back,
+.front {
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.front {
+  background: transparent url('../img/Card-BG.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.back {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  background-color: rgba(216, 191, 216, 0.055);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.selected {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.match .front {
+  background: rgba(216, 191, 216, 0.055) !important;
+}

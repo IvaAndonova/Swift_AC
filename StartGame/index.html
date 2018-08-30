@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>Pexeso Game</title>
+ 
+  <link rel="stylesheet" href="css/style.prefix.css">
+  <link rel="icon" type="image/png" href="img/mushroom.png">
+  <script src="jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+  <header class="mainHead">
+    <div class="mainNav">
+        <div class="refreshButton">
+            <button id="refreshBut">
+                <img class="resetButon" src="img/Reset.png" alt="Reset Button" onclick="window.location.reload()">
+            </button>
+        </div>
+        <div class="scoreDisplay">
+            <span>Score:250</br>Hight score:800</span>
+        </div>
+        <section id="stats-game">
+            <div class="opacity">
+                <p id="timer">Time: <span class="score-game"></span></p>
+            </div>
+        </section>
+        <!-- <div id="progressBar">
+            <div class="bar"></div>
+               
+            <progress class="progressBar" max="100" value="70"></progress> 
+     </div>-->
+     <div id='timer'></div>
+            <div id='progress' style='background:red; height:5px;'></div>
+    </div>
+</header>
+
+<section class="boardSection">
+  <div id="game"></div>
+</section>
+<script src="jquery-3.3.1.min.js"></script>
+  <script src="js/script.babel.js"></script>
+</body>
+
+</html>
