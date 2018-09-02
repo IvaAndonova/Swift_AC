@@ -1,3 +1,16 @@
+/* --- |Readability| - Между някой селектори си използвала по два нови реда за разделяне, а между други само 1. Както за всеки друг код,
+е доста полезно да има консистентност. Така ще е много по-лесно за четене от други хора (бас ловя, че и за теб) --- */
+
+/* --- |Performance optimization| - Използването само на * за селектор е изкючително тежка операция.
+Ако имаш да речем над 1000 елемента по страницата, този селектор ще се отрази бая на performanc-a.
+Чисто имформативно: началната страница на BTV (1511 елемента), 
+1 страница с резултати на google (1210 елемента). 
+Началната страница на wikipedia (1355 елемента)   
+
+|Advice| - box-sizing: border-box е страхотно нещо и е доста удобно в някой ситуации, но бих ти препоръчал да го използваш само когато ти трябва.
+Основната причина е, че променш стандартния начин на работа на CSS property-тата. От една страна не е хобаво за теб да свикваш с нещо, което не е стандратно,
+тъй като ако отидеш на друг проект, където го няма поставено това, няма да имаш идея какво се случва. 
+От друга страна, ако дойде друг човек да работи по-твоя проект, ще му е по-сложно да свикне с това, че всички елементи са border-box (тъй като това не е стандартно)*/
 *,
 *::before,
 *::after {
@@ -9,12 +22,9 @@ body {
   margin: 0;
   background: gray;
 }
-.mainHead {
-  width: 100%;
-  left: 0;
-  top: 0;
-  display: inline-block;
-}
+
+/* |Advice| - Тъй като mainHead и mainNav имат едни и същи свойства, можеш да ги обединиш в едно. Така спестяваш доста код, и същевременно става по-лесно за четене. */
+.mainHead,
 .mainNav {
   width: 100%;
   display: inline-block;
@@ -31,7 +41,7 @@ body {
 .loader {
   text-align: center;
 }
-.progress {
+.progress { /*|Advice| - Виж коментара на който съм сложил за "progress::-webkit-progress-value"  */
   margin-top: 10px;
   background: #eee;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
@@ -41,29 +51,43 @@ body {
   width: 70%;
   margin: 10px auto;
   height: 22px;
-  
 }
 
+/* --- |Advice| |Readability| - Добра практика е да подреждаш различните property-та по тип. Така ще знаеш винаги къде да очакваш дадено propery и ще е многократно по-лесно за четене.
+Хубав пример за това има тук:  https://css-tricks.com/poll-results-how-do-you-order-your-css-properties/ 
+Като аз не слагам коментари между различните слекции, а само ги разделям с нов ред (коментарите в този случай са малко излишни според мен) */
 #progressBar div {
+  box-sizing: border-box; /* --- Така или инак имаш най отгоре *{box-sizing: border-box} защо си сложила това тук? */
   height: 100%;
-  text-align: right;
-  padding: 0 10px;
-  line-height: 22px; /* same as #progressBar height if we want text middle aligned */
   width: 0;
+  padding: 0 10px;
+  
+  text-align: right;
+  line-height: 22px; /* same as #progressBar height if we want text middle aligned */
+  
   background-color: #CBEA00;
-  box-sizing: border-box;
 }
 
-progress::-webkit-progress-value {
+progress::-webkit-progress-value { /* --- |Advice| - Така написано, изглежда че имаш DOM element с името progress, но реално това, което имаш е ID.
+Евентуално тва е останало от нещо старо. Добра идея е да разчистваш кода, който не използваш, тъй като само први кода по-труден за четене и забавя зареждането на страницата.
+Тук можеш да видиш как да използваш code covarage инструментите на Chrome, за да видиш, кой код се използва, и кой не:
+https://developers.google.com/web/updates/2017/04/devtools-release-notesщ
+Силно ти препоръчвам да го разгледаш. Мега лесно е за използване а е супер полезно
+*/
   background: #be37da;
 }
-progress::-webkit-progress-bar {
+progress::-webkit-progress-bar { /* --- Същото като гордния коментар се отнася и за тук*/
   background: rgba(192, 192, 192, 0.568);
 }
 #refreshBut {
   border-bottom-left-radius: 10px;
   cursor: pointer;
 }
+/* --- |Advice| |UX improvement| - Това със cursor:pointer е супер. Помага на потребителя да разбере, че даденото нещо е clickable. Нещо допълнително, което можеш да сложиш
+за да помогне още повече за добрия UX е да поставиш :hover стил. Така няма да разчиташ само на това че потребителя ще забележи смяната на курсура,
+а ще промениш и самия елемент. По този начин ще направиш много по-лесно на хората да разберат, че това е бутон.
+Ако направиш нормалния бутон да има opacity:0.8 а hover версията да е с opacity:1 ще е достатъчно. Но реално можеш да подходиш по какъвто искаш начин.*/
+
 .scoreDisplay {
   background-color: #dad8e2;
   border-bottom-right-radius: 10px;
@@ -84,20 +108,20 @@ progress::-webkit-progress-bar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+  /* -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly; */   /* -- box-pack няма стойност space-evenly. justify-content има таква стойност*/
+  justify-content: space-evenly;
 }
 
 .card {
   position: relative;
-  -webkit-transition: all .4s linear;
-  -o-transition: all .4s linear;
-  transition: all .4s linear;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
+  transition: all .4s linear; /* --- Това си е повече лично предпочитание от колкото best practices, но според мен основното property е по-логично да е отгоре, а префиксите да са под него*/
+    -webkit-transition: all .4s linear;
+    -o-transition: all .4s linear;
+  transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
   margin: 5px;
 }
 
@@ -137,5 +161,7 @@ progress::-webkit-progress-bar {
 }
 
 .match .front {
-  background: rgba(216, 191, 216, 0.055) !important;
+  /* background: rgba(216, 191, 216, 0.055) !important; */
+  background:transparent;
+  /* --- !importatn е излишно в случая. Също така, ако искаш да махнеш фона на нещо, можеш да използваш transparent за цвят. Това е еквивалентно на rgba(255,255,255,0)*/
 }

@@ -1,49 +1,72 @@
 <!doctype html>
 <html lang="en">
+    <!-- |Readability| - Постаряй се малко повече с подреждането на кода. За проект от размерите на този, не е от чак топлкова голямо значение, 
+    но ще ти се наложи да пишеш темплейти по 200 300 реда, и ще ти е мега сложно ако не си подреждаш кода
+    (основно говоря за идентациите на редовете)-->
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        
+        <title>Pexeso Game</title>
+        
+        <link rel="stylesheet" href="css/style.prefix.css"> <!-- |Readability| - Любопитно ми е, защо се казва така файла. 
+        Попринцип трябва да кръщаваме файловете по такъв начин, че като прочетем името да ни става ясно какво прави самия файл.
+        style.prefix.css е малко объркващо. -->
+        <link rel="icon" type="image/png" href="favicon.ico"> <!-- Файл "img/mushroom.png" не съществува, най-вероятно си забравила URL-a -->
+        <script src="jquery-3.3.1.min.js"></script> <!-- |Consistency| - Имаш си папка "js" защо този файл е извън нея? -->
+    </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  
-  <title>Pexeso Game</title>
- 
-  <link rel="stylesheet" href="css/style.prefix.css">
-  <link rel="icon" type="image/png" href="img/mushroom.png">
-  <script src="jquery-3.3.1.min.js"></script>
-</head>
+    <body>
+        <header class="mainHead">
+            <div class="mainNav"> <!-- |Optimization| - Според мен този div е малко излишен. Вече имаш <header> като wrapper на останалите елементи. -->
+                <div class="refreshButton">
+                    <button id="refreshBut" onclick="window.location.reload()" title="Reset game"> <!-- По-добра идея е onclick hendlar-ите да се поставят директно на бутона.
+                    |UX improvement| |Readability| - Има различни причини за това, но една от най-основните е, че става по-четимо.
+                    Още нещо, което доста често съм срещал, е кликам на бутона и нищо не става, тъй като има няколко пиксела разлика между 
+                    голимината на бутона и картинката, и потребителя е оспял да улучи точно тях. 
+                    
+                    |UX improvement| - Още нещо (което може би не съм ви го казвал на курса), когато имаш бутон, който има само изображение и няма текст, 
+                    е добра идея да му сложиш title атрибут. По този начин ако потребителя не разбира какво означава иконката, може да посочи бутона 
+                    и ще ми излезе tooltip с посочения от теб текст. -->
+                        <img class="resetButon" src="img/Reset.png" alt="Reset Button">
+                    </button>
+                </div>
 
-<body>
-  <header class="mainHead">
-    <div class="mainNav">
-        <div class="refreshButton">
-            <button id="refreshBut">
-                <img class="resetButon" src="img/Reset.png" alt="Reset Button" onclick="window.location.reload()">
-            </button>
-        </div>
-        <div class="scoreDisplay">
-            <span>Score:250</br>Hight score:800</span>
-        </div>
-        <section id="stats-game">
-            <div class="opacity">
-                <p id="timer">Time: <span class="score-game"></span></p>
+                <div class="scoreDisplay">
+                    <span>Score:250</br>Hight score:800</span> <!-- |Advice| - Когато тръгнеш да правиш тази част динамична, ще ти е много по-лестно, 
+                    ако имаш отделни елементи (да речем <span>) за scor-a и за hightScore -->
+                </div>
+
+                <section id="stats-game"> <!-- |Readability| - Малко по-нагоре беше сложила името на едно id да е "refreshBut" a свега двете дими са разделени с тире.
+                Като цяло няма значение кой от двата варянта избереш (макар че ти препоръчвам "camel case") важното е да си консистента през целия application -->
+                    <div class="opacity"> <!-- |Advice| |Readability| - Избягвай да слагаш твърде генерализирани имена за класове. 
+                    В случая "opacity" не ми помага да разбера нищо за самия клас. Прави елементите по-плътни, прави ги по-прозрачни или нещо съвсем различно.
+                    Сега общо взето само може човек да гадае защо е този клас. -->
+                        <p id="timer"> <!-- |Advice| - Параграф се използва когато имаш парче текст. В момента имаме само една дума. Не е супер оместно да използваш <p>
+                            Използвай <span> или <div> или <h2-3-4> (който ти се стори по-подходящ) -->
+                            Time: <!-- |Advice| - за да ти е по-лесен живота като стилизираш, не оставяй да имаш текст и таг на едно и сущо ниво. Сложи "Time:" в един <span>
+                                повярвай ми, това може да ти спести бая главоболия в бъдеще. -->
+                            <span class="score-game"></span>
+                        </p>
+                    </div>
+                </section>
+                <!-- <div id="progressBar">
+                    <div class="bar"></div>
+                    
+                    <progress class="progressBar" max="100" value="70"></progress> 
+                </div>-->
+                <div id='timer'></div>
+                <div id='progress' style='background:red; height:5px;'></div> <!-- |Advice| - Избягвай inline-styles. Особенно ако вече имаш закъчен CSS файл към документа -->
             </div>
+        </header>
+
+        <section class="boardSection">
+            <div id="game"></div>
         </section>
-        <!-- <div id="progressBar">
-            <div class="bar"></div>
-               
-            <progress class="progressBar" max="100" value="70"></progress> 
-     </div>-->
-     <div id='timer'></div>
-            <div id='progress' style='background:red; height:5px;'></div>
-    </div>
-</header>
-
-<section class="boardSection">
-  <div id="game"></div>
-</section>
-<script src="jquery-3.3.1.min.js"></script>
-  <script src="js/script.babel.js"></script>
-</body>
-
+        
+        <script src="jquery-3.3.1.min.js"></script>
+        <script src="js/script.babel.js"></script> <!-- Можеш ли да ми кажеш защо си използвала Bable, какво си използвала от възможнистите му.
+        Можеш ли да постигнеш същия краен резултат без него и какво би слечелила ако го махнеш (също така какво би загубила) -->
+    </body>
 </html>
